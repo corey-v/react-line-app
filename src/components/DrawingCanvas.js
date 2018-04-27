@@ -7,10 +7,16 @@ class DrawingCanvas extends Component {
 
         this.state = {
             lastClick: [0, 0],
-            clicks: 0
+            clicks: 0,
+            color: '#000000'
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.changeColor = this.changeColor.bind(this);
+    }
+
+    changeColor() {
+        this.setState({ color: 'red' });
     }
 
     handleClick(e) {
@@ -28,7 +34,7 @@ class DrawingCanvas extends Component {
             context.beginPath();
             context.moveTo(this.state.lastClick[0], this.state.lastClick[1]);
             context.lineTo(x, y);
-            context.strokeStyle = '#000000';
+            context.strokeStyle = this.state.color;
             context.stroke();
         } else {
             this.setState({
@@ -46,7 +52,10 @@ class DrawingCanvas extends Component {
 
     render() {
         return (
-            <canvas id="canvas1" ref="canvas" onClick={this.handleClick}></canvas>
+            <div>
+                <canvas id="canvas1" ref="canvas" onClick={this.handleClick}></canvas>
+                <span class="color-button" style={{backgroundColor:"red"}} onClick={this.changeColor}></span>
+            </div>
         )
     }
 
