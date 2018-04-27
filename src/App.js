@@ -10,8 +10,8 @@ class App extends Component {
       <div className="App">
         <h1>Simple react line canvas app</h1>
         <h2>By: Corey Valentyne</h2>
-        <a href="https://www.github.com/corey-v"><img src={github} /></a>
-        <a href="https://www.linkedin.com/in/corey-valentyne"><img src={linkedin} /></a>
+        <a href="https://www.github.com/corey-v"><img src={github} alt="github" /></a>
+        <a href="https://www.linkedin.com/in/corey-valentyne"><img src={linkedin} alt="linkedin" /></a>
         <DrawingCanvas />
       </div>
     );
