@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './DrawingCanvas.css';
+import { TwitterPicker } from 'react-color';
 
 class DrawingCanvas extends Component {
     constructor(props) {
@@ -12,11 +13,11 @@ class DrawingCanvas extends Component {
         }
 
         this.handleClick = this.handleClick.bind(this);
-        this.changeColor = this.changeColor.bind(this);
+        this.handleChangeComplete = this.handleChangeComplete.bind(this);
     }
 
-    changeColor() {
-        this.setState({ color: 'red' });
+    handleChangeComplete(newColor) {
+        this.setState({ color: newColor.hex });
     }
 
     handleClick(e) {
@@ -24,6 +25,7 @@ class DrawingCanvas extends Component {
         if (this.state.clicks === 0) {
             canvas.width = canvas.clientWidth;
             canvas.height = canvas.clientHeight;
+
         }
         let x = e.pageX - canvas.offsetLeft;
         let y = e.pageY - canvas.offsetTop;
@@ -48,13 +50,11 @@ class DrawingCanvas extends Component {
 
     }
 
-
-
     render() {
         return (
             <div>
                 <canvas id="canvas1" ref="canvas" onClick={this.handleClick}></canvas>
-                <span class="color-button" style={{backgroundColor:"red"}} onClick={this.changeColor}></span>
+                <TwitterPicker onChangeComplete={this.handleChangeComplete}/>
             </div>
         )
     }

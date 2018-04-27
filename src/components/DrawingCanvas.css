@@ -3,9 +3,13 @@
     width: 500px;
     height: 500px;
     margin-left: 100px;
+    background-color: white;
+    box-shadow: 3px 3px 3px black;
 }
 .color-button{
     background-color: blue;
     border: 2px solid black;
     padding: 0px 10px;
+    left: 30px;
+    position:relative;
 }
