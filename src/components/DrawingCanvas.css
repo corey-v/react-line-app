@@ -2,14 +2,13 @@
     border: 1px solid black;
     width: 500px;
     height: 500px;
-    margin-left: 100px;
     background-color: white;
-    box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
 }
-.color-button{
-    background-color: blue;
-    border: 2px solid black;
-    padding: 0px 10px;
-    left: 30px;
-    position:relative;
+
+.twitterPicker{
+    margin:auto;
 }

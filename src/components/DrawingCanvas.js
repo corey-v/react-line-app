@@ -54,7 +54,7 @@ class DrawingCanvas extends Component {
         return (
             <div>
                 <canvas id="canvas1" ref="canvas" onClick={this.handleClick}></canvas>
-                <TwitterPicker onChangeComplete={this.handleChangeComplete}/>
+                <TwitterPicker className="twitterPicker" onChangeComplete={this.handleChangeComplete} />
             </div>
         )
     }
